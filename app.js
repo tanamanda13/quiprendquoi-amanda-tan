@@ -21,5 +21,9 @@ app.post('/party', (req, res) => {
   .catch((err) => console.error(err));
 });
 
+// display a party
+app.get('/party/:id', function(req, res) {
+  res.render('party', { title: 'Page événement', name_app: 'Qui prend whaat ?' });
+});
 
 app.listen(process.env.PORT, () => console.log(`Front app listening on process.env.PORT ${process.env.PORT}!`));
