@@ -41,7 +41,7 @@ app.get('/party/:id', function(req, res) {
 
 // add item on a party
 app.post(`/party/:id/items`, (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   axios
   .post(`${process.env.API_URL}/party/${req.params.id}/items`, {
     name: req.body.name,
@@ -50,6 +50,16 @@ app.post(`/party/:id/items`, (req, res) => {
   .then(({data}) => console.log(data))
   .then(() => res.redirect(`/party/${req.params.id}`))
   .catch((err) => console.error(err));
+});
+
+// delete an item 
+app.post(`/party/:id/items/:item`, (req, res) => {
+  axios
+  .get(`${process.env.API_URL}/party/${req.params.id}`)
+  axios
+  .delete(`${process.env.API_URL}/party/${req.params.id}/items/${req.params.item}`)
+  .then(({data}) => console.log(data))
+  .then(() => res.redirect(`/party/${req.params.id}`))
 });
 
 

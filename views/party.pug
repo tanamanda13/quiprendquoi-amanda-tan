@@ -1,10 +1,12 @@
 include ../partials/header.pug
 h2= party.name
 h3 Créé par #{party.author}
-h4 Liste des choses apportés:
+h4 Liste des choses apportées:
 ul
   each val in party.items
-    li= val.name
+    form(method="post" action=`/party/${party._id}/items/${val._id}`)
+      li= val.name
+      button(type="submit") Supprimer
 form(method="post" action=`/party/${party._id}/items`)
   div
     label(for="name") Je ramène :
