@@ -17,7 +17,8 @@ app.post('/party', (req, res) => {
   // res.send('Post ok!');
   axios
   .post(`${process.env.API_URL}/party`, req.body)
-  .then(({data}) => console.log(data))
+  .then(({ data }) => res.redirect(`/party/${data._id}`))
+  // .then(({data}) => console.log(data))
   .catch((err) => console.error(err));
 });
 
