@@ -1,14 +1,16 @@
 include ../partials/header.pug
 h2= party.name
 h3 Créé par #{party.author}
+h4 Liste des choses apportés:
+ul
+  each val in party.items
+    li= val.name
 form(method="post" action=`/party/${party._id}/items`)
   div
-    label(for="item") Je ramène :
-    input(name="item" id="item" required minlength="3" placeholder="ex: une glacière, le dessert...")
-    //- label(for="author") Auteur
-    //- input(name="author" id="author" required minlength="3" placeholder="Adrien")
-    //- label(for="date") Date
-    //- input(name="date" id="date" placeholder="23-03-2011")
+    label(for="name") Je ramène :
+    input(name="name" id="name" required minlength="3" placeholder="ex: une glacière, le dessert...")
+    label(for="user") De :
+    input(name="user" id="user" required minlength="3" placeholder="Prenom")
   button(type="submit") Confirmer
 label(for="url") Partagez l'événement
 input(id="url" value=`${url}`)

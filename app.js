@@ -25,7 +25,7 @@ app.post('/party', (req, res) => {
 // display a party
 app.get('/party/:id', function(req, res) {
   // console.log(req.params.id)
-  console.log(req.body);
+  // console.log(req.body);
   axios
   .get(`${process.env.API_URL}/party/${req.params.id}`)
   .then(({ data }) =>
@@ -41,10 +41,12 @@ app.get('/party/:id', function(req, res) {
 
 // add item on a party
 app.post(`/party/:id/items`, (req, res) => {
-  //console.log(req.body);
-  // res.send('Post ok!');
+  console.log(req.body);
   axios
-  .post(`${process.env.API_URL}/party/${req.params.id}/items`, req.body)
+  .post(`${process.env.API_URL}/party/${req.params.id}/items`, {
+    name: req.body.name,
+    user: req.body.user
+  })
   .then(({data}) => console.log(data))
   .then(() => res.redirect(`/party/${req.params.id}`))
   .catch((err) => console.error(err));
