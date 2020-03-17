@@ -32,7 +32,8 @@ app.get('/party/:id', function(req, res) {
     res.render('party', {
       name_app: 'Qui prend whaat ?',
       party: data,
-      title: 'Page événement'
+      title: 'Page événement',
+      url: `${process.env.FRONT_URL}:${process.env.PORT}/party/${data._id}`
     }),
   )
   .catch((err) => console.log(err));
