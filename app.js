@@ -25,7 +25,7 @@ app.post('/party', (req, res) => {
 // display a party
 app.get('/party/:id', function(req, res) {
   // console.log(req.params.id)
-  // res.render('party', { title: 'Page événement', name_app: 'Qui prend whaat ?' });
+  console.log(req.body);
   axios
   .get(`${process.env.API_URL}/party/${req.params.id}`)
   .then(({ data }) =>
@@ -38,5 +38,17 @@ app.get('/party/:id', function(req, res) {
   )
   .catch((err) => console.log(err));
 });
+
+// add item on a party
+app.post(`/party/:id/items`, (req, res) => {
+  //console.log(req.body);
+  // res.send('Post ok!');
+  axios
+  .post(`${process.env.API_URL}/party/${req.params.id}/items`, req.body)
+  .then(({data}) => console.log(data))
+  .then(() => res.redirect(`/party/${req.params.id}`))
+  .catch((err) => console.error(err));
+});
+
 
 app.listen(process.env.PORT, () => console.log(`Front app listening on process.env.PORT ${process.env.PORT}!`));

@@ -1,5 +1,14 @@
 include ../partials/header.pug
 h2= party.name
 h3 Créé par #{party.author}
+form(method="post" action=`/party/${party._id}/items`)
+  div
+    label(for="item") Je ramène :
+    input(name="item" id="item" required minlength="3" placeholder="ex: une glacière, le dessert...")
+    //- label(for="author") Auteur
+    //- input(name="author" id="author" required minlength="3" placeholder="Adrien")
+    //- label(for="date") Date
+    //- input(name="date" id="date" placeholder="23-03-2011")
+  button(type="submit") Confirmer
 label(for="url") Partagez l'événement
 input(id="url" value=`${url}`)
