@@ -1,0 +1,13 @@
+@import 'vendors/reset.scss';
+
+h1 {
+  color: blue;
+}
+
+form {
+  border: 1px solid red;
+
+  div {
+    border: 1px solid green;
+  }
+} 
