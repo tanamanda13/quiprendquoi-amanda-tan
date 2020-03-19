@@ -1,13 +1,47 @@
 @import 'vendors/reset.scss';
+@import 'config/medias.scss';
+@import 'blocs/newParty.scss';
+@import 'blocs/party.scss';
+:root {
+  --input-color: #99A3BA;
+  --input-border: #CDD9ED;
+  --input-border-focus: #275EFE;
+  --input-placeholder: #CBD1DC;
+  --primary: #275EFE;
+  --paragraph: #333333;
 
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #EEF4FF;
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #678EFE;
+}
 h1 {
-  color: blue;
+  color: var(--primary);
+  font-size: 32px;
+
+  margin: 15px;
 }
 
-form {
-  border: 1px solid pink;
+h2 {
+  color: var(--paragraph);
+  font-size: 20px;
 
-  div {
-    border: 1px solid green;
-  }
-} 
+  margin: 15px;
+}
+h3, h4 {
+  color: var(--paragraph);
+  font-size: 16px;
+
+  margin: 15px;
+}
+
+
+// form {
+//   border: 1px solid pink;
+
+//   // div {
+//   //   border: 1px solid green;
+//   // }
+// } 

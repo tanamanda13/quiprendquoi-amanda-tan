@@ -6,13 +6,14 @@ ul
   each val in party.items
     form(method="post" action=`/party/${party._id}/items/${val._id}`)
       li= val.name
-      button(type="submit") Supprimer
+      button(type="submit").btn__delete Supprimer
 form(method="post" action=`/party/${party._id}/items`)
-  div
+  div.party__fields
     label(for="name") Je ramène :
     input(name="name" id="name" required minlength="3" placeholder="ex: une glacière, le dessert...")
     label(for="user") De :
-    input(name="user" id="user" required minlength="3" placeholder="Prenom")
+    input(name="user" id="user" required minlength="3" placeholder="Prénom")
   button(type="submit") Confirmer
-label(for="url") Partagez l'événement
-input(id="url" value=`${url}`)
+div.party__fields
+  label(for="url") Partagez l'événement
+  input(id="url" value=`${url}`)
