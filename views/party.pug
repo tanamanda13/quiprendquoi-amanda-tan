@@ -11,9 +11,9 @@ form(method="post" action=`/party/${party._id}/items`)
   div.party__fields
     label(for="name") Je ramène :
     input(name="name" id="name" required minlength="3" placeholder="ex: une glacière, le dessert...")
-    label(for="user") De :
+    label(for="user") par :
     input(name="user" id="user" required minlength="3" placeholder="Prénom")
   button(type="submit") Confirmer
 div.party__copy
   label(for="url") Partagez l'événement
-  input(id="url" value=`${url}` data-clipboard=`${url}`)
+  input(id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} vous invite à rejoindre l'événément ${party.name}`)
