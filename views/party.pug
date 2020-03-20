@@ -14,6 +14,6 @@ form(method="post" action=`/party/${party._id}/items`)
     label(for="user") De :
     input(name="user" id="user" required minlength="3" placeholder="Prénom")
   button(type="submit") Confirmer
-div.party__fields
+div.party__copy
   label(for="url") Partagez l'événement
-  input(id="url" value=`${url}`)
+  input(id="url" value=`${url}` data-clipboard=`${url}`)
