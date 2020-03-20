@@ -42,7 +42,7 @@
     color: var(--input-color);
     border: 1px solid var(--input-border);
     // border-radius: 6px;
-    border-radius: 0 6px 6px 0;
+    border-radius: 6px;
     &:focus {
       outline: none;
       border-color: var(--input-border-focus);
@@ -110,7 +110,7 @@ li {
     color: var(--input-color);
     border: 1px solid var(--input-border);
     // border-radius: 6px;
-    border-radius: 0 6px 6px 0;
+    border-radius: 6px;
     &:focus {
       outline: none;
       border-color: var(--input-border-focus);
