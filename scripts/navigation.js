@@ -1,3 +1,4 @@
+import isPartyPage from '../scripts/isPartyPage';
 
 if (isPartyPage(window.location.href)) {
   
@@ -10,6 +11,4 @@ if (isPartyPage(window.location.href)) {
 
 
 
-function isPartyPage(url) {
-  return /party\/[a-zA-Z0-9]*$/.test(url);
-}
+
