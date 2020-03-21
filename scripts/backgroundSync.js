@@ -18,7 +18,9 @@ else {
 }
 
 
-
+/**
+ * Return offline page
+ */
 function postDataFromThePage() {
   return caches.match('offline.html');
 }

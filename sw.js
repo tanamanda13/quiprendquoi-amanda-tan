@@ -63,10 +63,23 @@ addEventListener('sync', function(event) {
   }
 });
 
+/** API PUSH FAILED */
+
+// addEventListener('push', function(event) {
+//   const promise = registration.showNotification('Qui prend whaat?', {
+//       body: 'Nouvelle ajout dans un évènement',
+//       icon: './pwa/images/icons/icon-192x192.png',
+//       vibrate: [200, 100, 200, 100, 200, 100, 200],
+//       tag: 'vibration-sample'
+//   });
+
+//   event.waitUntil(promise);
+// });
+
 
 /**
  *
- * savoir si une page est une page événément
+ * Check if it's a party page
  */
 function isPartyPage(url) {
   return /party\/[a-zA-Z0-9]*$/.test(url);
