@@ -52,6 +52,17 @@ addEventListener('fetch', (event) => {
   }
 });
 
+addEventListener('sync', function(event) {
+  if (event.tag == 'myFirstSync') {
+    event.waitUntil(
+      // console.log('backgroundSync ok')
+     caches
+      .match(event.request)
+      .catch((err) => caches.match('offline.html'))
+    )
+  }
+});
+
 
 /**
  *
