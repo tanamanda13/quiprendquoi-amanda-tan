@@ -9,5 +9,36 @@
   <body>
     <h1>Oops !</h1>
     <h2>Vous êtes hors ligne</h2>
+    <p>Déjà QPW user? vous pouvez toujours consulter les évènements déjà visités. </p>
+    <ul class="ul__parties">
+
+    </ul>
+    <script>
+      caches.open('parties').then((cache) =>
+        cache.keys().then((keys) =>
+          keys.forEach((key) => {
+
+            const name = localStorage.getItem(key.url);
+            console.log(key, name);
+            let ul = document.querySelector('.ul__parties')
+            
+            if (name) {
+
+              let li = document.createElement('li');
+              ul.appendChild(li);
+              const $link = document.createElement('a');
+              $link.href = key.url;
+              $link.innerHTML = name;
+              li.appendChild($link);
+              
+            }
+            else 
+            {
+              ul.innerHTML = `<p>Pas d'évènements à consulter</p>`
+            }
+          }),
+        ),
+      );
+    </script>
   </body>
 </html>
