@@ -4,7 +4,7 @@
 
 `npm install`
 
-`mkdir public`
+`mkdir public` puis créer un fichier style.css dans le dossier public
 
 `npm run start`
 
