@@ -17,6 +17,7 @@
 - Meilleure présentation visuelle des items (`*.scss`)
 - Navigation : possibilité de retour sur la page créer un évènement (`navigation.js`)
 - Structure en modules (un peu) (`navigation.js`, `isPartyPage.js`)
+- API Background Sync (`backgroundSync.js`)
 
 
 ## Article personnel
