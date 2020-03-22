@@ -3,7 +3,9 @@
 ## Installation
 
 `npm install`
+
 `mkdir public`
+
 `npm run start`
 
 ## Améliorations apportées
