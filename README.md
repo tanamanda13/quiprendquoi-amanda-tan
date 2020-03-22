@@ -26,7 +26,7 @@ La sensation de dépit lorsque la page d’un site web se fait attendre, tout le
 Pour parer à cet écueil, des systèmes de mémoires existent.
 Pendant ce TP, nous avons eu l’occasion, entre autres, d’évoquer le stockage de données d’une application web, en gardant en ligne de mire d’offrir à l’utilisateur du web, « l’internaute » comme on ne dit plus, l’expérience d’un site web façon SPA et résilient à la fois. Cette matrice posée, l’utilisation de la mémoire de stockage du navigateur a été un choix adapté à nos objectifs, et ce, au regard de la méthode de l’amélioration progressive. Dans cette optique, libre à nous d’utiliser par la suite des outils toujours plus innovants en laissant le moins possible, de configurations de l’utilisation de notre application sur le bord de route.
 
-LocalStorage, SessionStorage, IndexedDB, Cache, Cookies…Cet article abordera donc les systèmes de mémoire du navigateur, aura pour but de mettre un peu au clair ces différents moyens de stocker des données localement, sans avoir la prétention de l’exhaustitivité bien sûr. Je m’attarderai un peu plus sur les technos qui ont été mis en application dans ce projet : localStoage et Cache.
+LocalStorage, SessionStorage, IndexedDB, Cache, Cookies…Cet article abordera donc les systèmes de mémoire du navigateur, aura pour but de mettre un peu au clair ces différents moyens de stocker des données localement, sans avoir la prétention de l’exhaustitivité bien sûr. Je m’attarderai un peu plus sur les technos qui ont été mises en application dans ce projet : localStoage et Cache.
 
 #### **Définitions et mots-clés**
 
@@ -55,7 +55,7 @@ Pour faire court, le service worker est un fichier JavaScript qui s’exécute e
 ##### **Autres systèmes de stockages local au navigateur**
 
 ##### - IndexedDB 
-C’est l'API à utiliser pour le stockage côté client si vous souhaitez stocker des données complexes, des fichiers ou même des blobs dans le navigateur. Le fonctionnement de cette base de données est complètement différent de localStorage et présente une complexité supplémentaire. Il s'agit d'un système de base de données basé sur les transactions qui est décrit par MDN comme une base de données orientée objet basée sur JavaScript. Cela signifie que les données ne sont pas stockées dans une table avec des lignes et des colonnes comme avec un SGBDR basé sur SQL, mais plutôt avec des objets JavaScript qui sont accessibles / indexés avec une clé, plus comparable à du MongoDB.
+C’est l'API à utiliser pour le stockage côté client si vous souhaitez stocker des données complexes, des fichiers ou même des blobs dans le navigateur. Le fonctionnement de cette base de données est complètement différent de localStorage et présente une complexité supplémentaire. Il s'agit d'un système de base de données basé sur les transactions qui est décrit par MDN comme une base de données orientée objet basée sur JavaScript. Cela signifie que les données ne sont pas stockées dans une table avec des lignes et des colonnes comme avec un SGBDR basé sur SQL, mais plutôt avec des objets JavaScript qui sont indexés avec une clé, plus comparable à du MongoDB.
 
 ##### - Cookies
 
@@ -67,9 +67,9 @@ De nombreux sites Web sécurisés utilisent des cookies pour valider l'identité
 
 
 ##### - Performances 
-L'API localStorage est simple à utiliser mais synchrone, pas super en termes de performance. Donc, si vous l'utilisez trop souvent, votre application commencera bientôt à se freezer.
+L'API localStorage est simple à utiliser mais synchrone, pas super en termes de performance. Donc, si vous l'utilisez trop souvent, votre application commencera bientôt à se figer.
 
-Là on aurait bien envie d’utiliser l’IndexedDB qui est asynchrone, donc efficace, mais difficile d’utilisation, avec des callbacks et des écouteurs d’évènement difficile à contrôler…
+Là on aurait bien envie d’utiliser l’IndexedDB qui est asynchrone, donc efficace, mais difficile d’utilisation, avec des callbacks et des écouteurs d’évènements difficiles à contrôler…
 
 [ Mozilla a réalisé une super librairie, localForage : une API simple calquée sur le localStorage natif, mais en interne stocké de façon asynchrone grâce à IndexedDB pour que cela soit performant, écrite en ES5. Un mélange du localStorage et de l’IndexedDB mais avec le meilleur des deux… Génial ! à tester.]
 
@@ -123,7 +123,7 @@ Quelques chiffres difficile à corroborer :
 
 #### **Conclusion**
 
-Il y aurait beaucoup d’autres aspect de la question à développer, comme la sécurité des données ou bien encore  de librairies ou frameworks ( comme redis, PouchDB, emberData etc…) alternatifs…Reste que du stockage local au stockage de session, des caches côté client aux services distants très en vogue (cloud computing) comme AWS - les façons dont nous compilons les données persistantes auront un impact important sur le type d'UX que les développeurs peuvent fournir à leurs utilisateurs.
+Il y aurait beaucoup d’autres aspects de la question à développer, comme la sécurité des données ou bien encore des librairies ou frameworks ( comme redis, PouchDB, emberData etc…) alternatifs… Reste que du stockage local au stockage de session, des caches côté client aux services distants très en vogue (cloud computing) comme AWS - les façons dont nous compilons les données persistantes auront un impact important sur le type d'UX que les développeurs peuvent fournir à leurs utilisateurs.
 
 
 #### **Ressources**
