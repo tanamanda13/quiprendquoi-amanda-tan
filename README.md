@@ -19,7 +19,7 @@
 
 ## Article personnel
 
-### **Sujet : La mémoire dans la peau… du navigateur.s**
+### **Sujet : La mémoire dans la peau… du navigateur.**
 
 
 La sensation de dépit lorsque la page d’un site web se fait attendre, tout le monde la déteste. Oui, car aujourd’hui, tout doit aller très vite. Action. Réaction. Elle là, le petit dinosaure apparait… argh. 
